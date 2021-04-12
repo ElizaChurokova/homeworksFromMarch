@@ -5,8 +5,9 @@ import util.HibernateUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
+//import java.util.stream.Collector;
+//import java.util.stream.Collectors;
 
 public class Application {
     public static void main(String[] args) {
@@ -21,17 +22,10 @@ public class Application {
        List<Pizza> pizzasResult = getAll();
        System.out.println(pizzasResult);
 
-       List<String> pizzasLess350 = new ArrayList<String>();
-        Collections.addAll(pizzasLess350, "Pepperoni",
-                "Margherita",
-                "Crudo");
-        List<String> filteredPizza = pizzasLess350.stream()
-                .filter(x ->x.length()<350)
-                .collect(Collectors.toList());
+       List<Pizza> pizzas = getAll();
 
-        for(String x : filteredPizza){
-            System.out.println(x);
-        }
+       pizzas.stream().filter(x -> x.getWeight() < 350).forEach(x -> System.out.println(x));
+
 
 
     }

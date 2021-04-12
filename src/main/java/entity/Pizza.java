@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import javax.persistence.*;
 
 @Entity
@@ -23,7 +22,4 @@ public class Pizza {
     private Integer price;
     @Column(name = "weight")
     private Integer weight;
-
-
-
 }
